@@ -18,10 +18,14 @@ python app/updater.py {accessToken} {domain} {record} {recordType}
 
 Where:
 
-- `accessToken` is your Digital Ocean ['Personal Access Token'](https://cloud.digitalocean.com/settings/applications)
-- `domain` is the domain name you want to update (e.g: yourdomain.com)
-- `record` is the value of the record you want to update (e.g: home)
-- `recordtype` is either A or AAAA
+- `accessToken`: your Digital Ocean ['Personal Access Token'](https://cloud.digitalocean.com/settings/applications)
+- `domain`: the domain name you want to update (e.g: yourdomain.com)
+- `record`: the value of the record you want to update (e.g: home)
+- `recordType`: either A or AAAA
+- `-q` / `--quiet`: quiet mode, only displays output on IP change
+- `-d` / `--debug`: debug mode, shows debug messages, more
+- `-re {seconds}` / `--run-every {seconds}`: runs continuously every number of seconds
+- `ecoc` / `--error-code-on-change`: returns error code 1 on IP change
 
 ## Run Continuously / Cron Style:
 
