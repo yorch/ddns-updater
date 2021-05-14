@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   do-ddns-updater:
-    image: python:3.8-alpine
+    image: python:3.9-alpine
     restart: unless-stopped
     env_file: .env
     environment:

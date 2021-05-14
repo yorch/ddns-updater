@@ -53,7 +53,7 @@ docker-compose -d up
 You can also run it without Compose, by using something like:
 
 ```sh
-IMAGE=python:3.8-alpine
+IMAGE=python:3.9-alpine
 CONTAINER_NAME=do-ddns-updater
 CONTAINER_WORKDIR=/app
 TOKEN={your token}
