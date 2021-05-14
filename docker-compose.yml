@@ -4,5 +4,15 @@ services:
   do-ddns-updater:
     image: yorch/do-ddns-updater
     restart: unless-stopped
+    # This will use a file called `.env` in the same directory where this `docker-compose` file is,
+    # so you can keep your token and other config isolated.
+    # See the provided `.env.sample` file for more details.
     env_file: .env
-    command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${TIMEOUT}
+    # Or instead of using the external `.env` file, you could pass the environment variables directly:
+    # environment:
+    #   - TOKEN=yourtoken
+    #   - DOMAIN=yourdomain
+    #   - RECORD=yourrecord
+    #   - RTYPE=A
+    #   - RUN_EVERY=300
+    command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${RUN_EVERY}

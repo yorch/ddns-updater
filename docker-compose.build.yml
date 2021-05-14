@@ -4,4 +4,4 @@ services:
   do-ddns-updater:
     build: .
     env_file: .env
-    command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${TIMEOUT}
+    command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${RUN_EVERY}
