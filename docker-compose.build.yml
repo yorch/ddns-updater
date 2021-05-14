@@ -2,7 +2,6 @@ version: "3.7"
 
 services:
   do-ddns-updater:
-    image: yorch/do-ddns-updater
-    restart: unless-stopped
+    build: .
     env_file: .env
     command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${TIMEOUT}

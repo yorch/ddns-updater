@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  do-ddns-updater:
+    image: python:3.9-alpine
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # So stdout can be viewed through docker logs
+      - PYTHONUNBUFFERED=0
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: python -u updater.py ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${TIMEOUT}
