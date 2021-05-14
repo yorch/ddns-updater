@@ -50,8 +50,8 @@ docker-compose up -d
 Or if you prefer, you can just use a bash script like the following:
 
 ```sh
-IMAGE=yorch/do-ddns-updater
-CONTAINER_NAME=do-ddns-updater
+IMAGE=yorch/ddns-updater
+CONTAINER_NAME=ddns-updater
 TOKEN={your token}
 DOMAIN={your domain}
 RECORD={your record}
@@ -71,13 +71,13 @@ docker run \
 To build the image using the provided [Dockerfile](Dockerfile), run the following:
 
 ```sh
-docker build -t do-ddns-updater .
+docker build -t ddns-updater .
 ```
 
 Then, you can run your new image with something like:
 
 ```sh
-IMAGE=do-ddns-updater
+IMAGE=ddns-updater
 TOKEN={your token}
 DOMAIN={your domain}
 RECORD={your record}
@@ -97,8 +97,8 @@ Or with Docker Compose:
 version: "3.7"
 
 services:
-  do-ddns-updater:
-    image: do-ddns-updater
+  ddns-updater:
+    image: ddns-updater
     env_file: .env
     command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${RUN_EVERY}
 ```
@@ -109,7 +109,7 @@ You can even build it and run it directly with Docker Compose:
 version: "3.7"
 
 services:
-  do-ddns-updater:
+  ddns-updater:
     build: .
     env_file: .env
     command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${RUN_EVERY}

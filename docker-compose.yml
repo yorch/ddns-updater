@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  do-ddns-updater:
-    image: yorch/do-ddns-updater
+  ddns-updater:
+    image: yorch/ddns-updater
     restart: unless-stopped
     # This will use a file called `.env` in the same directory where this `docker-compose` file is,
     # so you can keep your token and other config isolated.
