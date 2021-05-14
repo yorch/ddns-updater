@@ -1,5 +1,20 @@
 # Digital Ocean Dynamic DNS Updater
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Digital Ocean Dynamic DNS Updater](#digital-ocean-dynamic-dns-updater)
+  - [Purpose](#purpose)
+  - [Usage](#usage)
+    - [Run Continuously / Cron Style](#run-continuously--cron-style)
+  - [Docker](#docker)
+    - [Official Docker Image](#official-docker-image)
+    - [Docker build](#docker-build)
+  - [Credits](#credits)
+
+<!-- /code_chunk_output -->
+
 ## Purpose
 
 Allows to dynamically update an 'A' or 'AAAA' record that is managed by Digital Ocean's DNS servers.
