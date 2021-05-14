@@ -1,7 +1,5 @@
 # Digital Ocean Dynamic DNS Updater
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-
 ## Purpose
 
 Allows to dynamically update an 'A' or 'AAAA' record that is managed by Digital Ocean's DNS servers.
