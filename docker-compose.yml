@@ -2,13 +2,17 @@ version: "3.7"
 
 services:
   do-ddns-updater:
-    image: python:3.9-alpine
+    image: yorch/do-ddns-updater
     restart: unless-stopped
+    # This will use a file called `.env` in the same directory where this `docker-compose` file is,
+    # so you can keep your token and other config isolated.
+    # See the provided `.env.sample` file for more details.
     env_file: .env
-    environment:
-      # So stdout can be viewed through docker logs
-      - PYTHONUNBUFFERED=0
-    volumes:
-      - ./app:/app
-    working_dir: /app
-    command: python -u updater.py ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${TIMEOUT}
+    # Or instead of using the external `.env` file, you could pass the environment variables directly:
+    # environment:
+    #   - TOKEN=yourtoken
+    #   - DOMAIN=yourdomain
+    #   - RECORD=yourrecord
+    #   - RTYPE=A
+    #   - RUN_EVERY=300
+    command: ${TOKEN} ${DOMAIN} ${RECORD} ${RTYPE} --run-every ${RUN_EVERY}
