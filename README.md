@@ -21,7 +21,7 @@ Where:
 - `record`: the value of the record you want to update (e.g: home)
 - `recordType`: either A or AAAA
 - `-q` / `--quiet`: quiet mode, only displays output on IP change
-- `-d` / `--debug`: debug mode, shows debug messages, more
+- `-d` / `--debug`: debug mode, shows debug messages
 - `-re {seconds}` / `--run-every {seconds}`: runs continuously every number of seconds
 - `ecoc` / `--error-code-on-change`: returns error code 1 on IP change
 
@@ -38,9 +38,9 @@ python app/updater.py {accessToken} {domain} {record} {recordType} --run-every 3
 
 ### Official Docker Image
 
-You can use the official Docker image directly from Docker Hub without having to clone this repo.
+You can use the official Docker image directly from GitHub Container Registry without having to clone this repo.
 
-You can use the provided [docker-compose.yml](docker-compose.yml) file to run it, just download the file, create a `.env` file next to it (see [.env.sample](.env.sample)) and run:
+You can use the provided [docker-compose.yml](docker-compose.yml) file to run it. Just download the file, create a `.env` file next to it (see [.env.sample](.env.sample) for reference), and run:
 
 ```sh
 # Runs the service in detached mode
@@ -50,7 +50,7 @@ docker-compose up -d
 Or if you prefer, you can just use a bash script like the following:
 
 ```sh
-IMAGE=yorch/ddns-updater
+IMAGE=ghcr.io/yorch/ddns-updater
 CONTAINER_NAME=ddns-updater
 TOKEN={your token}
 DOMAIN={your domain}
@@ -94,8 +94,6 @@ docker run \
 Or with Docker Compose:
 
 ```yaml
-version: "3.7"
-
 services:
   ddns-updater:
     image: ddns-updater
@@ -106,8 +104,6 @@ services:
 You can even build it and run it directly with Docker Compose:
 
 ```yaml
-version: "3.7"
-
 services:
   ddns-updater:
     build: .
@@ -117,4 +113,8 @@ services:
 
 ## Credits
 
-Originally forked from: https://github.com/bensquire/Digital-Ocean-Dynamic-DNS-Updater
+Originally forked from: <https://github.com/bensquire/Digital-Ocean-Dynamic-DNS-Updater>
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
